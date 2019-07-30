@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"">
+            <li class=" nav-item dropdown">
+  <a class=" navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">HOMEWORK</a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="/dec_32">IEEE floating point single precision (32-bit)</a>
+    <a class="dropdown-item" href="/dec_64">IEEE floating point double precision (64-bit)</a>
+    <a class="dropdown-item" href="/solve">System of linear equations</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Out Something else here</a>
+  </div>
+  </li>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li> -->
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<section class="headline-sec">
+  <div class="overlay ">
+    <section class="headline-sec">
+      <center>
+        <div class="overlay ">
+
+
+          <div class="jumbotron text-center">
+            <h1>แปลงเลขทศนิยมเป็น เลข 64 บิต (Decimal to IEEE 64 bit)</h1>
+          </div>
+
+
+          <hr>
+          <form action="" method="post">
+            {% csrf_token %}
+            <label for="exampleFormControlFile1" class="pull-left"
+              style="text-align:left;">ใส่ตัวเลขที่ต้องการเเปลง</label>
+
+            <div class="col-md-10 align-items-center justify-content-center">
+              <input class="form-control" name="x" type="number" placeholder="กรอกตัวเลข" step="any" min="0"
+                max="9999999" value="{{d}}" required>
+              <br>
+            </div>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="btn btn-outline-primary"> แปลงค่า</button>
+          </form>
+          <br>
+          <div class="col-md-10">
+            <div class="row justify-content-center align-items-center">
+              <div class="alert alert-success">
+                <br>
+                <h4>
+                  <b>number :</b> {{ d }}
+                  <br>
+                  <b>Answe :</b> {{ f }}
+                </h4>
+                <br>
+                <br>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </center>
+    </section>
+  </div>
+</section>
+{% endblock content %}
+</body>
+
+</html>
